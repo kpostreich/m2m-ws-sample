@@ -1,4 +1,4 @@
 #!/bin/sh
 
-/home/ibmdemo/m2m-ws-sample/defaultapplication/monolith-mono2micro/DefaultApplication-ear/target/liberty/wlp/bin/server stop DefaultApplicationServer
+/home/ibmdemo/m2m-ws-sample/defaultapplication/monolith/DefaultApplication-ear/target/liberty/wlp/bin/server stop DefaultApplicationServer
 
