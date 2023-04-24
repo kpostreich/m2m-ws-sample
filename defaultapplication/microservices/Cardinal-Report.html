@@ -1,6 +1,7 @@
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="Content-Language" content="en-us">
 <style type="text/css">a {text-decoration: none}</style>
 <style type="text/css">a:hover {text-decoration: underline}</style>
@@ -23,7 +24,17 @@
   	  left: 10%;
 	  font-weight: bolder;	  
 	}
-
+	.version { 
+	  padding-top: 2%;
+	  padding-bottom: 1%;
+	  display: block;
+	  overflow: hidden; 
+	  font-size: 15px;
+	  color: black;
+	  position: relative;
+  	  left: 10%;
+	  
+	}
 	.collapsible {  
 	  cursor: pointer; 
 	  padding-top: 10px;
@@ -103,7 +114,7 @@
 			<li data-accordion-item class="bx--accordion__item collapsible">
 				<button class="bx--accordion__heading extra" aria-expanded="false" aria-controls="pane1">
 					<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"></path></svg>
-					<div class="bx--accordion__title "> Member Classes ( 2 ) </div>
+					<div class="bx--accordion__title "> Member Classes ( 4 ) </div>
 				</button>
 				<div id="pane1" class="bx--accordion__content">
 					<br>  
@@ -118,7 +129,17 @@
 								 
 								 
 								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> HitCount </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
 									<li class="bx--list__item jclass"> Increment </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> IncrementAction </li>
 								</ul>
 								 
 								 
@@ -151,29 +172,9 @@
 						</div>
 
 						<div class="bx--structured-list-tbody">
-							 
+							
 							<div class="bx--structured-list-row">
-								<div class="bx--structured-list-td white-space: break-spaces jclass"> Increment <font color="#661fff"> [Persistence] </font> <font color="#026acc"> <em> implements </em> Serializable </font>  </div>
-								<div class="bx--structured-list-td">
-								
-									<li class="jfunction"> getPrimarykey </li>
-								
-									<li class="jfunction"> setThevalue </li>
-								
-								</div>
-									<br>
-							</div>
-							 
-							<div class="bx--structured-list-row">
-								<div class="bx--structured-list-td white-space: break-spaces jclass"> IncrementSSB  </div>
-								<div class="bx--structured-list-td">
-								
-									<li class="jfunction"> getTheValue </li>
-								
-									<li class="jfunction"> increment </li>
-								
-								</div>
-									<br>
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass">  None </div>
 							</div>
 							
 							  
@@ -301,7 +302,7 @@
 								 
 								 
 								<ul class="bx--list--unordered bx--list--nested"> 
-									<li class="bx--list__item jclass"> HitCount </li>
+									<li class="bx--list__item jclass"> SnoopServlet </li>
 								</ul>
 								
 								</div> 
@@ -388,18 +389,9 @@
 						 
 						<div class="bx--structured-list-tbody">
 
-							 
+							
 							<div class="bx--structured-list-row">
-								<div class="bx--structured-list-td" >  <a href="#partition2"> partition2 </a> </div>
-								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass" > IncrementAction </div>
-								<div class="bx--structured-list-td">
-								
-									<li class="jfunction"> getTheValue </li>
-								
-									<li class="jfunction"> increment </li>
-								
-								</div>
-								 
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass">  None </div>
 							</div>
 							
 
@@ -429,201 +421,6 @@
 							
 							<div class="bx--structured-list-row">
 								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass">  None </div>
-							</div>
-							
-
-						</div>
-					</section>
-				</div>
-			</li>
-		</ul>
-
-	<div> <br> <br> </div>
-
-	 
-		<div class="bx--row">
-			<div class="bx--col bx--col-lg-8">
-			  <div class="bx--tile  partition_header" id="partition2"> <h4> partition2 Partition </h4> </div>
-			</div>
-		  </div>
-
-		<ul data-accordion class="bx--accordion bx--col-lg-8">
-
-			<!-- example cluster section 1 -->
-			<li data-accordion-item class="bx--accordion__item collapsible">
-				<button class="bx--accordion__heading extra" aria-expanded="false" aria-controls="pane1">
-					<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"></path></svg>
-					<div class="bx--accordion__title "> Member Classes ( 1 ) </div>
-				</button>
-				<div id="pane1" class="bx--accordion__content">
-					<br>  
-					<section class="bx--structured-list" class="tab"> 
-						 
-						<div class="bx--structured-list-tbody">
-							
-
-							 
-							<div class="bx--structured-list-row">
-								<div class="bx--structured-list-td">
-								 
-								 
-								<ul class="bx--list--unordered bx--list--nested"> 
-									<li class="bx--list__item jclass"> IncrementAction </li>
-								</ul>
-								
-								</div> 
-							</div> 
-
-						</div>
-					</section>
-				</div>
-			</li>
-			
-			<!-- example cluster section 2 -->
-			<li data-accordion-item class="bx--accordion__item collapsible">
-				<button class="bx--accordion__heading extra" aria-expanded="false" aria-controls="pane1">
-					<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"></path></svg>
-					<div class="bx--accordion__title"> External-Facing Classes (Other Partitions Invoke These Methods) </div>
-				</button>
-				<div id="pane1" class="bx--accordion__content">
-					<br>  
-					<section class="bx--structured-list" class="tab"> 
-						<div class="bx--structured-list-thead">
-							<div class="bx--structured-list-row bx--structured-list-row--header-row">
-								<div class="bx--structured-list-th">Class Name</div>
-								<div class="bx--structured-list-th">Methods (Invoked by Other Partitions)</div>
-							</div>
-						</div>
-
-						<div class="bx--structured-list-tbody">
-							 
-							<div class="bx--structured-list-row">
-								<div class="bx--structured-list-td white-space: break-spaces jclass"> IncrementAction  </div>
-								<div class="bx--structured-list-td">
-								
-									<li class="jfunction"> getTheValue </li>
-								
-									<li class="jfunction"> increment </li>
-								
-								</div>
-									<br>
-							</div>
-							
-							  
-						</div>
-					</section>
-				</div>
-			</li>	
-
-			<!-- example cluster section 1 -->
-			<li data-accordion-item class="bx--accordion__item collapsible">
-				<button class="bx--accordion__heading extra" aria-expanded="false" aria-controls="pane1" >
-					<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"></path></svg>
-					<div class="bx--accordion__title"  >   Non-Primitive Object Parameters Passed From Outside To This Partition  </div>
-				</button>
-				<div id="pane1" class="bx--accordion__content">
-					<br>  
-					<section class="bx--structured-list" class="tab">
-						<div class="bx--structured-list-thead">
-							<div class="bx--structured-list-row bx--structured-list-row--header-row">
-								<div class="bx--structured-list-th">Parameter Object Type</div>
-								<div class="bx--structured-list-th">Methods (Accepting the Parameter Object)</div>
-							</div>
-						</div>
-						 
-						<div class="bx--structured-list-tbody">
-
-							
-							<div class="bx--structured-list-row">
-								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass">  None </div>
-							</div>
-							
-
-						</div>
-					</section>
-				</div>
-			</li>
-
-			<!-- example cluster section 1 -->
-			<li data-accordion-item class="bx--accordion__item collapsible">
-				<button class="bx--accordion__heading extra" aria-expanded="false" aria-controls="pane1">
-					<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"></path></svg>
-					<div class="bx--accordion__title"> Partition Invokes the Following Class.Method(s) Residing Outside This Partition</div>
-				</button>
-				<div id="pane1" class="bx--accordion__content">
-					<br>  
-					<section class="bx--structured-list" class="tab">
-						<div class="bx--structured-list-thead">
-							<div class="bx--structured-list-row bx--structured-list-row--header-row">
-								<div class="bx--structured-list-th">Outside Partition</div>
-								<div class="bx--structured-list-th">Class Name</div>
-								<div class="bx--structured-list-th">Methods</div>
-							</div>
-						</div>
-						 
-						<div class="bx--structured-list-tbody">
-
-							 
-							<div class="bx--structured-list-row">
-								<div class="bx--structured-list-td" >  <a href="#partition0"> partition0 </a> </div>
-								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass" > IncrementSSB </div>
-								<div class="bx--structured-list-td">
-								
-									<li class="jfunction"> getTheValue </li>
-								
-									<li class="jfunction"> increment </li>
-								
-								</div>
-								 
-							</div>
-							 
-							<div class="bx--structured-list-row">
-								<div class="bx--structured-list-td" >  <a href="#partition0"> partition0 </a> </div>
-								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass" > Increment </div>
-								<div class="bx--structured-list-td">
-								
-									<li class="jfunction"> getPrimarykey </li>
-								
-									<li class="jfunction"> setThevalue </li>
-								
-								</div>
-								 
-							</div>
-							
-
-						</div>
-					</section>
-				</div>
-			</li>
-
-			<li data-accordion-item class="bx--accordion__item collapsible">
-				<button class="bx--accordion__heading extra" aria-expanded="false" aria-controls="pane1">
-					<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"></path></svg>
-					<div class="bx--accordion__title"> Partition Has References To The Following Classes Outside The Partition </div>
-				</button>
-				<div id="pane1" class="bx--accordion__content">
-					<br>  
-					<section class="bx--structured-list" class="tab">
-						<div class="bx--structured-list-thead">
-							<div class="bx--structured-list-row bx--structured-list-row--header-row">
-								<div class="bx--structured-list-th">Class (of Outside Partition)</div>
-								<div class="bx--structured-list-th">Outside Partition</div>
-								<div class="bx--structured-list-th">Referenced by (Current Partition) </div>
-							</div>
-						</div>
-						 
-						<div class="bx--structured-list-tbody">
-
-							 
-							<div class="bx--structured-list-row">
-								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> IncrementSSB </div>
-								<div class="bx--structured-list-td" > <a href="#partition0"> partition0 </a> </div>
-								<div class="bx--structured-list-td">
-								
-									<li class="jfunction"> IncrementAction </li>
-								
-								</div>
-								 
 							</div>
 							
 
@@ -636,7 +433,8 @@
 	<div> <br> <br> </div>
 
 	
- 
+	<div class="bx--structured-list-td bx--accordion__title version"> aipl_version: v2.0.0r40 </div>
+	
 </body>
 
 

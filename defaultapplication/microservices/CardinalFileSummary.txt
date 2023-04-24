@@ -1,9 +1,10 @@
-Cardinal Post-Codegen Report (v2.0.0r27)
+Cardinal Post-Codegen Report (v2.0.0r39)
 
 # ******************************************** #
 # Partition web contains the following classes #
 # ******************************************** #
 ===< Proxy >===
+    /var/application/monolith-web/DefaultWebApplication/src/main/java/com/ibm/defaultapplication/Increment.java
     /var/application/monolith-web/DefaultWebApplication/src/main/java/com/ibm/defaultapplication/IncrementAction.java
 ===< Service >===
 ===< Original >===
@@ -11,7 +12,6 @@ Cardinal Post-Codegen Report (v2.0.0r27)
     /var/application/monolith-web/DefaultWebApplication/src/main/java/SnoopServlet.java
 ===< Dummy >===
     /var/application/monolith-web/DefaultApplication-ear/src/test/java/wasdev/DefaultApplication/it/EndpointIT.java
-    /var/application/monolith-web/DefaultWebApplication/src/main/java/com/ibm/defaultapplication/Increment.java
     /var/application/monolith-web/DefaultWebApplication/src/main/java/com/ibm/defaultapplication/IncrementSSB.java
 ===< Utility >===
     /var/application/monolith-web/application/src/main/java/com/ibm/cardinal/util/CardinalException.java
@@ -27,6 +27,7 @@ Cardinal Post-Codegen Report (v2.0.0r27)
 ===< Proxy >===
 ===< Service >===
     /var/application/monolith-partition0/DefaultWebApplication/src/main/java/com/ibm/defaultapplication/IncrementActionService.java
+    /var/application/monolith-partition0/DefaultWebApplication/src/main/java/com/ibm/defaultapplication/IncrementService.java
 ===< Original >===
     /var/application/monolith-partition0/DefaultWebApplication/src/main/java/com/ibm/defaultapplication/Increment.java
     /var/application/monolith-partition0/DefaultWebApplication/src/main/java/com/ibm/defaultapplication/IncrementAction.java
