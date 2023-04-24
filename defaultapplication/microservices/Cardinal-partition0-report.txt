@@ -1,4 +1,4 @@
-Cardinal Partition Analysis Report (v2.0.0r27)
+Cardinal Partition Analysis Report (v2.0.0r39)
 
 # *************************************************** #
 # Partition partition0 contains the following classes #
@@ -12,6 +12,11 @@ Cardinal Partition Analysis Report (v2.0.0r27)
 # Partition partition0 has the following external-facing classes #
 # (other partitions invoke these methods)                        #
 # ************************************************************** #
+    ├─ Increment **Persistence** <--
+    │   implements: Serializable
+    │    ├─ .getPrimarykey
+    │    └─ .setThevalue
+    │
     └─ IncrementAction <--
          ├─ .getTheValue
          └─ .increment

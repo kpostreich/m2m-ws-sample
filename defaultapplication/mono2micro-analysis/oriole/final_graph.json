@@ -1,25 +1,14 @@
 {
-    "version": "v2.0.0r8",
+    "version": "v2.0.0r9",
     "mono_run_time_call_graph": {
         "nodes": [
-            {
-                "name": "SnoopServlet",
-                "group": 1,
-                "category": "Undefined",
-                "construct": "Class",
-                "FQCN": "",
-                "filepath": "Class, monolith/DefaultWebApplication/src/main/java/SnoopServlet.java",
-                "semantics": [
-                    "snoop"
-                ]
-            },
             {
                 "name": "HitCount",
                 "group": 1,
                 "category": "Undefined",
                 "construct": "Class",
                 "FQCN": "",
-                "filepath": "Class, monolith/DefaultWebApplication/src/main/java/HitCount.java",
+                "filepath": "Class, project/src/main/java/HitCount.java",
                 "semantics": [
                     "hitcount"
                 ]
@@ -30,7 +19,7 @@
                 "category": "Undefined",
                 "construct": "Class",
                 "FQCN": "",
-                "filepath": "Class, monolith/DefaultWebApplication/src/main/java/com/ibm/defaultapplication/IncrementAction.java",
+                "filepath": "Class, project/src/main/java/com/ibm/defaultapplication/IncrementAction.java",
                 "semantics": [
                     "hitcount"
                 ]
@@ -41,7 +30,7 @@
                 "category": "Undefined",
                 "construct": "Class",
                 "FQCN": "",
-                "filepath": "Class, monolith/DefaultWebApplication/src/main/java/com/ibm/defaultapplication/IncrementSSB.java",
+                "filepath": "Class, project/src/main/java/com/ibm/defaultapplication/IncrementSSB.java",
                 "semantics": [
                     "hitcount"
                 ]
@@ -52,19 +41,24 @@
                 "category": "Undefined",
                 "construct": "Class",
                 "FQCN": "",
-                "filepath": "Class, monolith/DefaultWebApplication/src/main/java/com/ibm/defaultapplication/Increment.java",
+                "filepath": "Class, project/src/main/java/com/ibm/defaultapplication/Increment.java",
                 "semantics": [
                     "hitcount"
+                ],
+                "tags": [
+                    "Utility"
                 ]
             },
             {
-                "name": "EndpointIT",
+                "name": "SnoopServlet",
                 "group": 1,
                 "category": "Undefined",
                 "construct": "Class",
                 "FQCN": "",
-                "filepath": "Class, monolith/DefaultApplication-ear/src/test/java/wasdev/DefaultApplication/it/EndpointIT.java",
-                "semantics": []
+                "filepath": "Class, project/src/main/java/SnoopServlet.java",
+                "semantics": [
+                    "snoop"
+                ]
             }
         ],
         "links": [
@@ -72,10 +66,10 @@
                 "source": "HitCount",
                 "target": "IncrementAction",
                 "method": {
-                    "increment": 4,
-                    "getTheValue": 4
+                    "increment": 3,
+                    "getTheValue": 3
                 },
-                "value": 3.079
+                "value": 2.791
             },
             {
                 "source": "HitCount",
@@ -90,8 +84,9 @@
                 "source": "IncrementAction",
                 "target": "IncrementSSB",
                 "method": {
-                    "increment": 4,
-                    "getTheValue": 4
+                    "increment": 3,
+                    "getTheValue": 3,
+                    "IncrementSSB": 2
                 },
                 "value": 3.079
             },
@@ -99,25 +94,25 @@
                 "source": "IncrementAction",
                 "target": "Increment",
                 "method": {
-                    "getPrimarykey": 3,
+                    "getPrimarykey": 2,
                     "getThevalue": 2,
                     "Increment": 1,
                     "setPrimarykey": 1,
-                    "setThevalue": 2
+                    "setThevalue": 1
                 },
-                "value": 3.197
+                "value": 2.945
             },
             {
                 "source": "IncrementSSB",
                 "target": "Increment",
                 "method": {
-                    "Increment": 9,
-                    "setPrimarykey": 8,
-                    "setThevalue": 12,
-                    "getThevalue": 15,
-                    "getPrimarykey": 8
+                    "Increment": 7,
+                    "getPrimarykey": 6,
+                    "setPrimarykey": 6,
+                    "getThevalue": 11,
+                    "setThevalue": 9
                 },
-                "value": 4.951
+                "value": 4.663
             }
         ],
         "overview": {
@@ -136,45 +131,38 @@
     "mono_data_dependency_graph": {
         "nodes": [
             {
-                "name": "EndpointIT",
+                "name": "SnoopServlet",
                 "group": 0,
                 "category": "default_group",
-                "filepath": "monolith/DefaultApplication-ear/src/test/java/wasdev/DefaultApplication/it/EndpointIT.java",
+                "filepath": "project/src/main/java/SnoopServlet.java",
                 "semantics": []
             },
             {
                 "name": "HitCount",
                 "group": 0,
                 "category": "default_group",
-                "filepath": "monolith/DefaultWebApplication/src/main/java/HitCount.java",
-                "semantics": []
-            },
-            {
-                "name": "SnoopServlet",
-                "group": 0,
-                "category": "default_group",
-                "filepath": "monolith/DefaultWebApplication/src/main/java/SnoopServlet.java",
-                "semantics": []
-            },
-            {
-                "name": "Increment",
-                "group": 0,
-                "category": "default_group",
-                "filepath": "monolith/DefaultWebApplication/src/main/java/com/ibm/defaultapplication/Increment.java",
+                "filepath": "project/src/main/java/HitCount.java",
                 "semantics": []
             },
             {
                 "name": "IncrementAction",
                 "group": 1,
                 "category": "data_dep_island_0",
-                "filepath": "monolith/DefaultWebApplication/src/main/java/com/ibm/defaultapplication/IncrementAction.java",
+                "filepath": "project/src/main/java/com/ibm/defaultapplication/IncrementAction.java",
+                "semantics": []
+            },
+            {
+                "name": "Increment",
+                "group": 0,
+                "category": "default_group",
+                "filepath": "project/src/main/java/com/ibm/defaultapplication/Increment.java",
                 "semantics": []
             },
             {
                 "name": "IncrementSSB",
                 "group": 1,
                 "category": "data_dep_island_0",
-                "filepath": "monolith/DefaultWebApplication/src/main/java/com/ibm/defaultapplication/IncrementSSB.java",
+                "filepath": "project/src/main/java/com/ibm/defaultapplication/IncrementSSB.java",
                 "semantics": []
             }
         ],
@@ -208,23 +196,12 @@
     "micro_detail_partition_by_business_logic": {
         "nodes": [
             {
-                "name": "SnoopServlet",
-                "group": 2,
-                "category": "partition1",
-                "construct": "Service Entry",
-                "FQCN": "com.ibm.defaultapplication.SnoopServlet",
-                "filepath": "Class, monolith/DefaultWebApplication/src/main/java/SnoopServlet.java",
-                "semantics": [
-                    "snoop"
-                ]
-            },
-            {
                 "name": "HitCount",
                 "group": 1,
                 "category": "partition0",
                 "construct": "Service Entry",
-                "FQCN": "com.ibm.defaultapplication.HitCount",
-                "filepath": "Class, monolith/DefaultWebApplication/src/main/java/HitCount.java",
+                "FQCN": "HitCount",
+                "filepath": "Class, project/src/main/java/HitCount.java",
                 "semantics": [
                     "hitcount"
                 ]
@@ -235,7 +212,7 @@
                 "category": "partition0",
                 "construct": "Class",
                 "FQCN": "com.ibm.defaultapplication.IncrementAction",
-                "filepath": "Class, monolith/DefaultWebApplication/src/main/java/com/ibm/defaultapplication/IncrementAction.java",
+                "filepath": "Class, project/src/main/java/com/ibm/defaultapplication/IncrementAction.java",
                 "semantics": [
                     "hitcount"
                 ]
@@ -246,7 +223,7 @@
                 "category": "partition0",
                 "construct": "Class",
                 "FQCN": "com.ibm.defaultapplication.IncrementSSB",
-                "filepath": "Class, monolith/DefaultWebApplication/src/main/java/com/ibm/defaultapplication/IncrementSSB.java",
+                "filepath": "Class, project/src/main/java/com/ibm/defaultapplication/IncrementSSB.java",
                 "semantics": [
                     "hitcount"
                 ]
@@ -257,19 +234,24 @@
                 "category": "partition0",
                 "construct": "Entity",
                 "FQCN": "com.ibm.defaultapplication.Increment",
-                "filepath": "Class, monolith/DefaultWebApplication/src/main/java/com/ibm/defaultapplication/Increment.java",
+                "filepath": "Class, project/src/main/java/com/ibm/defaultapplication/Increment.java",
                 "semantics": [
                     "hitcount"
+                ],
+                "tags": [
+                    "Utility"
                 ]
             },
             {
-                "name": "EndpointIT",
+                "name": "SnoopServlet",
                 "group": 0,
-                "category": "Unobserved",
-                "construct": "Class",
-                "FQCN": "wasdev.DefaultApplication.it.EndpointIT",
-                "filepath": "Class, monolith/DefaultApplication-ear/src/test/java/wasdev/DefaultApplication/it/EndpointIT.java",
-                "semantics": []
+                "category": "partition1",
+                "construct": "Service Entry",
+                "FQCN": "SnoopServlet",
+                "filepath": "Class, project/src/main/java/SnoopServlet.java",
+                "semantics": [
+                    "snoop"
+                ]
             }
         ],
         "links": [
@@ -277,10 +259,10 @@
                 "source": "HitCount",
                 "target": "IncrementAction",
                 "method": {
-                    "increment": 4,
-                    "getTheValue": 4
+                    "increment": 3,
+                    "getTheValue": 3
                 },
-                "value": 3.079
+                "value": 2.791
             },
             {
                 "source": "HitCount",
@@ -295,8 +277,9 @@
                 "source": "IncrementAction",
                 "target": "IncrementSSB",
                 "method": {
-                    "increment": 4,
-                    "getTheValue": 4
+                    "increment": 3,
+                    "getTheValue": 3,
+                    "IncrementSSB": 2
                 },
                 "value": 3.079
             },
@@ -304,38 +287,29 @@
                 "source": "IncrementAction",
                 "target": "Increment",
                 "method": {
-                    "getPrimarykey": 3,
+                    "getPrimarykey": 2,
                     "getThevalue": 2,
                     "Increment": 1,
                     "setPrimarykey": 1,
-                    "setThevalue": 2
+                    "setThevalue": 1
                 },
-                "value": 3.197
+                "value": 2.945
             },
             {
                 "source": "IncrementSSB",
                 "target": "Increment",
                 "method": {
-                    "Increment": 9,
-                    "setPrimarykey": 8,
-                    "setThevalue": 12,
-                    "getThevalue": 15,
-                    "getPrimarykey": 8
+                    "Increment": 7,
+                    "getPrimarykey": 6,
+                    "setPrimarykey": 6,
+                    "getThevalue": 11,
+                    "setThevalue": 9
                 },
-                "value": 4.951
+                "value": 4.663
             }
         ],
         "overview": {
             "nodes": [
-                {
-                    "name": "partition1",
-                    "group": 2,
-                    "category": "partition1",
-                    "filepath": "Cluster",
-                    "semantics": [
-                        "snoop"
-                    ]
-                },
                 {
                     "name": "partition0",
                     "group": 1,
@@ -346,11 +320,13 @@
                     ]
                 },
                 {
-                    "name": "Unobserved",
+                    "name": "partition1",
                     "group": 0,
-                    "category": "Unobserved",
+                    "category": "partition1",
                     "filepath": "Cluster",
-                    "semantics": []
+                    "semantics": [
+                        "snoop"
+                    ]
                 }
             ],
             "links": []
@@ -359,23 +335,12 @@
     "micro_detail_partition_by_natural_seam": {
         "nodes": [
             {
-                "name": "SnoopServlet",
-                "group": 2,
-                "category": "partition1",
-                "construct": "Class",
-                "FQCN": "",
-                "filepath": "Class, monolith/DefaultWebApplication/src/main/java/SnoopServlet.java",
-                "semantics": [
-                    "snoop"
-                ]
-            },
-            {
                 "name": "HitCount",
                 "group": 1,
                 "category": "partition0",
-                "construct": "Class",
-                "FQCN": "",
-                "filepath": "Class, monolith/DefaultWebApplication/src/main/java/HitCount.java",
+                "construct": "Service Entry",
+                "FQCN": "HitCount",
+                "filepath": "Class, project/src/main/java/HitCount.java",
                 "semantics": [
                     "hitcount"
                 ]
@@ -385,8 +350,8 @@
                 "group": 1,
                 "category": "partition0",
                 "construct": "Class",
-                "FQCN": "",
-                "filepath": "Class, monolith/DefaultWebApplication/src/main/java/com/ibm/defaultapplication/IncrementAction.java",
+                "FQCN": "com.ibm.defaultapplication.IncrementAction",
+                "filepath": "Class, project/src/main/java/com/ibm/defaultapplication/IncrementAction.java",
                 "semantics": [
                     "hitcount"
                 ]
@@ -396,8 +361,8 @@
                 "group": 1,
                 "category": "partition0",
                 "construct": "Class",
-                "FQCN": "",
-                "filepath": "Class, monolith/DefaultWebApplication/src/main/java/com/ibm/defaultapplication/IncrementSSB.java",
+                "FQCN": "com.ibm.defaultapplication.IncrementSSB",
+                "filepath": "Class, project/src/main/java/com/ibm/defaultapplication/IncrementSSB.java",
                 "semantics": [
                     "hitcount"
                 ]
@@ -406,21 +371,26 @@
                 "name": "Increment",
                 "group": 1,
                 "category": "partition0",
-                "construct": "Class",
-                "FQCN": "",
-                "filepath": "Class, monolith/DefaultWebApplication/src/main/java/com/ibm/defaultapplication/Increment.java",
+                "construct": "Entity",
+                "FQCN": "com.ibm.defaultapplication.Increment",
+                "filepath": "Class, project/src/main/java/com/ibm/defaultapplication/Increment.java",
                 "semantics": [
                     "hitcount"
+                ],
+                "tags": [
+                    "Utility"
                 ]
             },
             {
-                "name": "EndpointIT",
+                "name": "SnoopServlet",
                 "group": 0,
-                "category": "Unobserved",
-                "construct": "Class",
-                "FQCN": "",
-                "filepath": "Class, monolith/DefaultApplication-ear/src/test/java/wasdev/DefaultApplication/it/EndpointIT.java",
-                "semantics": []
+                "category": "partition1",
+                "construct": "Service Entry",
+                "FQCN": "SnoopServlet",
+                "filepath": "Class, project/src/main/java/SnoopServlet.java",
+                "semantics": [
+                    "snoop"
+                ]
             }
         ],
         "links": [
@@ -428,10 +398,10 @@
                 "source": "HitCount",
                 "target": "IncrementAction",
                 "method": {
-                    "increment": 4,
-                    "getTheValue": 4
+                    "increment": 3,
+                    "getTheValue": 3
                 },
-                "value": 3.079
+                "value": 2.791
             },
             {
                 "source": "HitCount",
@@ -446,8 +416,9 @@
                 "source": "IncrementAction",
                 "target": "IncrementSSB",
                 "method": {
-                    "increment": 4,
-                    "getTheValue": 4
+                    "increment": 3,
+                    "getTheValue": 3,
+                    "IncrementSSB": 2
                 },
                 "value": 3.079
             },
@@ -455,38 +426,29 @@
                 "source": "IncrementAction",
                 "target": "Increment",
                 "method": {
-                    "getPrimarykey": 3,
+                    "getPrimarykey": 2,
                     "getThevalue": 2,
                     "Increment": 1,
                     "setPrimarykey": 1,
-                    "setThevalue": 2
+                    "setThevalue": 1
                 },
-                "value": 3.197
+                "value": 2.945
             },
             {
                 "source": "IncrementSSB",
                 "target": "Increment",
                 "method": {
-                    "Increment": 9,
-                    "setPrimarykey": 8,
-                    "setThevalue": 12,
-                    "getThevalue": 15,
-                    "getPrimarykey": 8
+                    "Increment": 7,
+                    "getPrimarykey": 6,
+                    "setPrimarykey": 6,
+                    "getThevalue": 11,
+                    "setThevalue": 9
                 },
-                "value": 4.951
+                "value": 4.663
             }
         ],
         "overview": {
             "nodes": [
-                {
-                    "name": "partition1",
-                    "group": 2,
-                    "category": "partition1",
-                    "filepath": "Cluster",
-                    "semantics": [
-                        "snoop"
-                    ]
-                },
                 {
                     "name": "partition0",
                     "group": 1,
@@ -497,11 +459,13 @@
                     ]
                 },
                 {
-                    "name": "Unobserved",
+                    "name": "partition1",
                     "group": 0,
-                    "category": "Unobserved",
+                    "category": "partition1",
                     "filepath": "Cluster",
-                    "semantics": []
+                    "semantics": [
+                        "snoop"
+                    ]
                 }
             ],
             "links": []
