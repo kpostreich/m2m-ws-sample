@@ -79,7 +79,6 @@
 					<goal>install-feature</goal>
 					<goal>deploy</goal>
 					<goal>package</goal>
-					<goal>test-start</goal>
 				</goals>
 			</execution>
 		</executions>
@@ -140,7 +139,7 @@
                <executions>
                	<execution>
                			<id>copy-database-twas</id>
-               			<phase>prepare-package</phase>
+               			<phase>package</phase>
                    		<configuration>
                         <tasks>
                            <!-- Using an ant task to unzip the database at the root of the EAR file for tWAS -->
@@ -153,7 +152,7 @@
                </execution>
                <execution>
                			<id>copy-database-liberty</id>
-               			<phase>prepare-package</phase>
+               			<phase>package</phase>
                    		<configuration>
                         <tasks>
                            <!-- Using an ant task to unzip the database at the root of the EAR file for tWAS -->
