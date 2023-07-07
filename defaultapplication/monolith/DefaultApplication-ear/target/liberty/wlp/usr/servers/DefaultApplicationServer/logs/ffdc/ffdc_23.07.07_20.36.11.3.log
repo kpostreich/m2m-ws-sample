@@ -1,0 +1,343 @@
+------Start of DE processing------ = [7/7/23 20:36:11:607 CEST]
+Exception = com.ibm.ws.dynamic.bundle.DynamicBundleException
+Source = com.ibm.ws.beanvalidation.OSGiBeanValidationImpl
+probeid = 567
+Stack Dump = com.ibm.ws.dynamic.bundle.DynamicBundleException: Failed to create bundle
+	at com.ibm.ws.dynamic.bundle.BundleFactory.createBundle(BundleFactory.java:180)
+	at com.ibm.ws.classloading.internal.GatewayBundleFactory.createGatewayBundle(GatewayBundleFactory.java:162)
+	at com.ibm.ws.classloading.internal.GatewayBundleFactory.createGatewayBundleClassLoader(GatewayBundleFactory.java:87)
+	at com.ibm.ws.classloading.internal.ClassLoadingServiceImpl.createTCCL(ClassLoadingServiceImpl.java:577)
+	at com.ibm.ws.classloading.internal.ClassLoadingServiceImpl.access$200(ClassLoadingServiceImpl.java:97)
+	at com.ibm.ws.classloading.internal.ClassLoadingServiceImpl$4.createInstance(ClassLoadingServiceImpl.java:537)
+	at com.ibm.ws.classloading.internal.ClassLoadingServiceImpl$4.createInstance(ClassLoadingServiceImpl.java:534)
+	at com.ibm.ws.classloading.internal.util.CanonicalStore.retrieveOrCreate(CanonicalStore.java:84)
+	at com.ibm.ws.classloading.internal.util.CanonicalStore.retrieveOrCreate(CanonicalStore.java:74)
+	at com.ibm.ws.classloading.internal.ClassLoadingServiceImpl.createThreadContextClassLoader(ClassLoadingServiceImpl.java:534)
+	at com.ibm.ws.classloading.internal.ClassLoadingServiceImpl.createThreadContextClassLoader(ClassLoadingServiceImpl.java:93)
+	at com.ibm.ws.beanvalidation.OSGiBeanValidationImpl.createTCCL(OSGiBeanValidationImpl.java:279)
+	at com.ibm.ws.beanvalidation.OSGiBeanValidationImpl.cleanBvalCache(OSGiBeanValidationImpl.java:546)
+	at com.ibm.ws.beanvalidation.OSGiBeanValidationImpl.moduleMetaDataDestroyedApacheProvider(OSGiBeanValidationImpl.java:415)
+	at com.ibm.ws.beanvalidation.OSGiBeanValidationImpl.moduleMetaDataDestroyed(OSGiBeanValidationImpl.java:424)
+	at com.ibm.ws.container.service.metadata.internal.ModuleMetaDataManager.fireMetaDataDestroyed(ModuleMetaDataManager.java:35)
+	at com.ibm.ws.container.service.metadata.internal.ModuleMetaDataManager.fireMetaDataDestroyed(ModuleMetaDataManager.java:18)
+	at com.ibm.ws.container.service.metadata.internal.MetaDataManager.fireMetaDataDestroyedImpl(MetaDataManager.java:148)
+	at com.ibm.ws.container.service.metadata.internal.MetaDataManager.fireMetaDataDestroyed(MetaDataManager.java:128)
+	at com.ibm.ws.container.service.metadata.internal.MetaDataServiceImpl.fireModuleMetaDataDestroyed(MetaDataServiceImpl.java:137)
+	at com.ibm.ws.app.manager.module.internal.ModuleHandlerBase.undeployModule(ModuleHandlerBase.java:152)
+	at com.ibm.ws.app.manager.module.internal.DeployedModuleInfoImpl.uninstallModule(DeployedModuleInfoImpl.java:64)
+	at com.ibm.ws.app.manager.module.internal.SimpleDeployedAppInfoBase.uninstallApp(SimpleDeployedAppInfoBase.java:497)
+	at com.ibm.ws.app.manager.ear.internal.EARApplicationHandlerImpl.uninstall(EARApplicationHandlerImpl.java:97)
+	at com.ibm.ws.app.manager.internal.statemachine.StopAction.execute(StopAction.java:83)
+	at com.ibm.ws.app.manager.internal.statemachine.ApplicationStateMachineImpl.enterState(ApplicationStateMachineImpl.java:1283)
+	at com.ibm.ws.app.manager.internal.statemachine.ApplicationStateMachineImpl.performAction(ApplicationStateMachineImpl.java:1126)
+	at com.ibm.ws.app.manager.internal.statemachine.ApplicationStateMachineImpl.run(ApplicationStateMachineImpl.java:881)
+	at com.ibm.ws.threading.internal.ExecutorServiceImpl$RunnableWrapper.run(ExecutorServiceImpl.java:232)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1160)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:825)
+Caused by: org.osgi.framework.BundleException: An error occurred trying to read the bundle
+	at org.eclipse.osgi.storage.Storage.stageContent0(Storage.java:872)
+	at org.eclipse.osgi.storage.Storage.stageContent(Storage.java:827)
+	at org.eclipse.osgi.storage.Storage.install(Storage.java:528)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.installBundle(BundleContextImpl.java:146)
+	at org.eclipse.equinox.internal.region.BundleIdBasedRegion.installBundle0(BundleIdBasedRegion.java:117)
+	at org.eclipse.equinox.internal.region.BundleIdBasedRegion.installBundleAtLocation(BundleIdBasedRegion.java:97)
+	at com.ibm.ws.dynamic.bundle.BundleFactory.createBundle(BundleFactory.java:174)
+	... 31 more
+Caused by: java.io.IOException: No such file or directory
+	at java.io.File.createTempFile(File.java:2074)
+	at org.eclipse.osgi.storage.Storage.stageContent0(Storage.java:851)
+	... 37 more
+
+Dump of callerThis
+Object type = com.ibm.ws.beanvalidation.OSGiBeanValidationImpl
+  tc = class com.ibm.websphere.ras.TraceComponent@c7135523
+    strings[0] = "TraceComponent[com.ibm.ws.beanvalidation.OSGiBeanValidationImpl,class com.ibm.ws.beanvalidation.OSGiBeanValidationImpl,[BeanValidation],com.ibm.ws.beanvalidation.resources.nls.BVNLSMessages,null]"
+  priv = class com.ibm.ws.kernel.service.util.SecureAction@1d94313c
+    controlContext = class java.security.AccessControlContext@a16a863f
+      STATE_NOT_AUTHORIZED = 0
+      STATE_AUTHORIZED = 1
+      STATE_UNKNOWN = 2
+      debugSetting = -1
+      debugPermClassArray = null
+      debugPermNameArray = null
+      debugPermActionsArray = null
+      debugCodeBaseArray = null
+      DEBUG_UNINITIALIZED_HASCODEBASE = 0
+      DEBUG_NO_CODEBASE = 1
+      DEBUG_HAS_CODEBASE = 2
+      DEBUG_DISABLED = 0
+      DEBUG_ACCESS_DENIED = 1
+      DEBUG_ENABLED = 2
+      domainCombiner = null
+      context = class java.security.ProtectionDomain[2]
+      authorizeState = 1
+      containPrivilegedContext = true
+      callerPD = null
+      doPrivilegedAcc = null
+      isLimitedContext = false
+      limitedPerms = null
+      nextStackAcc = null
+      debugHasCodebase = 0
+      DEBUG_ACCESS = 1
+      DEBUG_ACCESS_STACK = 2
+      DEBUG_ACCESS_DOMAIN = 4
+      DEBUG_ACCESS_FAILURE = 8
+      DEBUG_ACCESS_THREAD = 16
+      DEBUG_ALL = 255
+    bootClassLoader = class com.ibm.ws.kernel.service.util.SecureAction$1$1@17d6dd52
+      this$0 = class com.ibm.ws.kernel.service.util.SecureAction$1@6fd269ab
+      serialVersionUID = -7098890353587179347
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@4e47656c
+      defaultCodeSource = class java.security.CodeSource@cafc0c7d
+      bootstrapClassLoader = class com.ibm.oti.vm.BootstrapClassLoader@4577ac99
+      DELEGATING_CL = "sun.reflect.DelegatingClassLoader"
+      isDelegatingCL = false
+      applicationClassLoader = class sun.misc.Launcher$AppClassLoader@234a6122
+      initSystemClassLoader = false
+      isAssertOptionFound = false
+      vmRef = 0
+      parent = null
+      checkAssertionOptions = false
+      assertionLock = class java.lang.ClassLoader$AssertionLock@aba8968a
+      defaultAssertionStatus = false
+      packageAssertionStatus = null
+      classAssertionStatus = null
+      packages = class java.util.Hashtable@8e3e0296
+      lazyInitLock = class java.lang.ClassLoader$LazyInitLock@4dea652a
+      classSigners = null
+      packageSigners = null
+      emptyCertificates = class java.security.cert.Certificate[0]
+      defaultProtectionDomain = null
+      parallelCapableCollection = class java.util.Collections$SynchronizedMap@9a96ec2d
+      classNameBasedLock = null
+      isParallelCapable = false
+      EMPTY_PACKAGE_ARRAY = class java.lang.Package[0]
+      methodTypeFromMethodDescriptorStringCache = null
+      allowArraySyntax = false
+      lazyClassLoaderInit = true
+      specialLoaderInited = true
+      internalAnonClassLoader = class java.lang.InternalAnonymousClassLoader@3a44312c
+    getContextClassLoaderAction = class com.ibm.ws.kernel.service.util.SecureAction$27@13172030
+      serialVersionUID = 4381279005860327500
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@8746528d
+    getSystemClassLoaderAction = class com.ibm.ws.kernel.service.util.SecureAction$28@2546b1c
+      serialVersionUID = -4916275247138051678
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@15b6e0b1
+  REFERENCE_VALIDATION_CONFIG_FACTORY = "validationConfigFactory"
+  REFERENCE_CLASSLOADING_SERVICE = "classLoadingService"
+  REFERENCE_VALIDATOR_FACTORY_BUILDER = "ValidatorFactoryBuilder"
+  ivModuleMetaDataSlot = class com.ibm.ws.runtime.metadata.MetaDataSlotImpl@1e2bfd50
+    id = 3
+    destroyed = false
+    metadataIntf = class java.lang.Class@7010a0c8
+      serialVersionUID = 3206093459760846163
+      AllPermissionsPD = class java.security.ProtectionDomain@398c0f52
+      SYNTHETIC = 4096
+      ANNOTATION = 8192
+      ENUM = 16384
+      MEMBER_INVALID_TYPE = -1
+      EmptyParameters = class java.lang.Class[0]
+      vmRef = 8116480
+      protectionDomain = class org.eclipse.osgi.internal.loader.ModuleClassLoader$GenerationProtectionDomain@a7211501
+      classNameString = null
+      cachedToString = null
+      fileNameString = null
+      packageNameString = null
+      annotationVars = null
+      annotationVarsOffset = 40
+      classValueMap = null
+      enumVars = null
+      enumVarsOffset = 48
+      initializationLock = class java.lang.J9VMInternals$ClassInitializationLock@9c2d5892
+      methodHandleCache = null
+      classRepoHolder = null
+      annotationCache = null
+      annotationCacheOffset = 64
+      reflectCacheEnabled = true
+      reflectCacheDebug = false
+      reflectCacheAppOnly = false
+      metadataCache = null
+      metadataCacheOffset = 68
+      cachedInterfaces = null
+      cachedInterfacesOffset = 72
+      cachedDeclaringClass = null
+      cachedDeclaringClassOffset = 76
+      cachedEnclosingClass = null
+      cachedEnclosingClassOffset = 80
+      cachedCheckInnerClassAttr = false
+      EMPTY_ANNOTATION_ARRAY = interface java.lang.annotation.Annotation[0]
+      implLookup = null
+      unsafe = class sun.misc.Unsafe@15b1f51a
+      copyMethod = class java.lang.reflect.Method@7d8b7d3c
+      copyField = class java.lang.reflect.Method@3686856f
+      copyConstructor = class java.lang.reflect.Method@d8109b8c
+      methodParameterTypesField = class java.lang.reflect.Field@b5603ce3
+      constructorParameterTypesField = class java.lang.reflect.Field@8521493b
+      NoArgs = class java.lang.Object[0]
+      reflectCache = null
+      reflectCacheOffset = 84
+    manager = class com.ibm.ws.container.service.metadata.internal.ModuleMetaDataManager@7d09c9c0
+      serialVersionUID = 2513574389899327209
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@de070eeb
+      listeners = class com.ibm.wsspi.kernel.service.utils.ConcurrentServiceReferenceSet@49407a3f
+      metaDataIDs = class com.ibm.ws.container.service.metadata.internal.IndexList@58af9d0
+      metaDatas = class java.util.ArrayList@3e076d17
+      slotIDs = class com.ibm.ws.container.service.metadata.internal.IndexList@4fc9bec9
+      serialVersionUID = 5464421863354792977
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@cd2a93cd
+    bundle = class org.eclipse.osgi.internal.framework.EquinoxBundle@fd5720af
+      equinoxContainer = class org.eclipse.osgi.internal.framework.EquinoxContainer@b7b46fe8
+      module = class org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule@72ab8196
+      monitor = class java.lang.Object@88b28e8b
+      context = class org.eclipse.osgi.internal.framework.BundleContextImpl@dfbd8abc
+      signerInfos = null
+      $SWITCH_TABLE$org$eclipse$osgi$container$Module$State = {1,2,3,4,5,6,7} /* array length = 7 */
+  validationConfigFactorySR = class com.ibm.wsspi.kernel.service.utils.AtomicServiceReference@d267f670
+    referenceName = "validationConfigFactory"
+    tuple = class java.util.concurrent.atomic.AtomicReference@c75c8484
+      serialVersionUID = -1848883965231344442
+      unsafe = class sun.misc.Unsafe@15b1f51a
+      valueOffset = 8
+      value = class com.ibm.wsspi.kernel.service.utils.AtomicServiceReference$ReferenceTuple@8fada95f
+    serialVersionUID = 2226592364007985000
+    $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@2595fe8b
+  classLoadingServiceSR = class com.ibm.wsspi.kernel.service.utils.AtomicServiceReference@3d01fb56
+    referenceName = "classLoadingService"
+    tuple = class java.util.concurrent.atomic.AtomicReference@d8c829bb
+      serialVersionUID = -1848883965231344442
+      unsafe = class sun.misc.Unsafe@15b1f51a
+      valueOffset = 8
+      value = class com.ibm.wsspi.kernel.service.utils.AtomicServiceReference$ReferenceTuple@bda6beff
+    serialVersionUID = 2226592364007985000
+    $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@2595fe8b
+  validatorFactoryBuilderSR = class com.ibm.wsspi.kernel.service.utils.AtomicServiceReference@94cf5599
+    referenceName = "ValidatorFactoryBuilder"
+    tuple = class java.util.concurrent.atomic.AtomicReference@903fa301
+      serialVersionUID = -1848883965231344442
+      unsafe = class sun.misc.Unsafe@15b1f51a
+      valueOffset = 8
+      value = class com.ibm.wsspi.kernel.service.utils.AtomicServiceReference$ReferenceTuple@39a3a718
+    serialVersionUID = 2226592364007985000
+    $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@2595fe8b
+      strings[0] = "TraceComponent[com.ibm.wsspi.kernel.service.utils.AtomicServiceReference,class com.ibm.wsspi.kernel.service.utils.AtomicServiceReference,[kernelUtils],com.ibm.ws.kernel.service.utils.resources.ServiceMessages,null]"
+  DEFAULT_VERSION = class org.osgi.framework.Version@d5cfc9fc
+    major = 1
+    minor = 0
+    micro = 0
+    qualifier = ""
+    SEPARATOR = "."
+    versionString = null
+    hash = 0
+    emptyVersion = class org.osgi.framework.Version@d9ae38f7
+  runtimeVersion = class org.osgi.framework.Version@20b0fd59
+    major = 1
+    minor = 1
+    micro = 0
+    qualifier = ""
+    SEPARATOR = "."
+    versionString = null
+    hash = 0
+    emptyVersion = class org.osgi.framework.Version@d9ae38f7
+      major = 0
+      minor = 0
+      micro = 0
+      qualifier = ""
+      SEPARATOR = "."
+      versionString = "0.0.0"
+      hash = 486695567
+      emptyVersion = class org.osgi.framework.Version@d9ae38f7
+  getThreadContextAccessorAction = class com.ibm.ws.beanvalidation.OSGiBeanValidationImpl$1@95ae4656
+    serialVersionUID = -2198084351891221209
+    $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@b2857f4a
+      strings[0] = "TraceComponent[com.ibm.ws.beanvalidation.OSGiBeanValidationImpl$1,class com.ibm.ws.beanvalidation.OSGiBeanValidationImpl$1,[BeanValidation],com.ibm.ws.beanvalidation.resources.nls.BVNLSMessages,null]"
+  serialVersionUID = 3074516031145216138
+  tc = class com.ibm.ejs.ras.TraceComponent@6f0bcd41
+    strings[0] = "TraceComponent[com.ibm.ws.beanvalidation.AbstractBeanValidation,class com.ibm.ws.beanvalidation.AbstractBeanValidation,[BeanValidation],com.ibm.ws.beanvalidation.resources.nls.BVNLSMessages,null]"
+  nls = class com.ibm.ejs.ras.TraceNLS@fdae8547
+    resolver = class com.ibm.ws.logging.internal.TraceNLSResolver@47a7720f
+      tc = class com.ibm.websphere.ras.TraceComponent@3c857857
+      DEBUG_TRACE_NLS_PROPERTY = "com.ibm.ejs.ras.debugTraceNLSResolver"
+      debugTraceNLSResolver = false
+      makeNoise = false
+      nullKey = "null"
+      svNullBundleName = "Resource Bundle name is null, key = {0}"
+      svBundleNotLoaded = "Unable to load ResourceBundle {0}"
+      svNullKeyMessage = "Null key passed while using ResourceBundle {0}"
+      svMalformedMessage = "No message text associated with key {0} in bundle {1}"
+    finder = class com.ibm.ws.logging.internal.StackFinder@9cfadb22
+      inCheck = false
+      initialized = true
+      rootGroup = class java.lang.ThreadGroup@a8b25740
+      packageAccessValid = false
+      packageAccess = null
+      packageAccessLock = class java.lang.SecurityManager$InterruptAccessLock@646e1cb8
+      packageDefinitionValid = false
+      packageDefinition = null
+      packageDefinitionLock = class java.lang.SecurityManager$InterruptDefinitionLock@dcb1fbad
+    ivBundleName = "com.ibm.ws.beanvalidation.resources.nls.BVNLSMessages"
+    caller = class java.lang.Class@fe27dc6b
+      serialVersionUID = 3206093459760846163
+      AllPermissionsPD = class java.security.ProtectionDomain@398c0f52
+      SYNTHETIC = 4096
+      ANNOTATION = 8192
+      ENUM = 16384
+      MEMBER_INVALID_TYPE = -1
+      EmptyParameters = class java.lang.Class[0]
+      vmRef = 15743488
+      protectionDomain = class org.eclipse.osgi.internal.loader.ModuleClassLoader$GenerationProtectionDomain@c45ce300
+      classNameString = "com.ibm.ws.beanvalidation.AbstractBeanValidation"
+      cachedToString = "class com.ibm.ws.beanvalidation.AbstractBeanValidation"
+      fileNameString = null
+      packageNameString = null
+      annotationVars = null
+      annotationVarsOffset = 40
+      classValueMap = class java.lang.ClassValue$ClassValueMap@e129f61
+      enumVars = null
+      enumVarsOffset = 48
+      initializationLock = null
+      methodHandleCache = null
+      classRepoHolder = null
+      annotationCache = class java.lang.Class$AnnotationCache@5e8dae5d
+      annotationCacheOffset = 64
+      reflectCacheEnabled = true
+      reflectCacheDebug = false
+      reflectCacheAppOnly = false
+      metadataCache = null
+      metadataCacheOffset = 68
+      cachedInterfaces = null
+      cachedInterfacesOffset = 72
+      cachedDeclaringClass = null
+      cachedDeclaringClassOffset = 76
+      cachedEnclosingClass = null
+      cachedEnclosingClassOffset = 80
+      cachedCheckInnerClassAttr = false
+      EMPTY_ANNOTATION_ARRAY = interface java.lang.annotation.Annotation[0]
+      implLookup = null
+      unsafe = class sun.misc.Unsafe@15b1f51a
+      copyMethod = class java.lang.reflect.Method@7d8b7d3c
+      copyField = class java.lang.reflect.Method@3686856f
+      copyConstructor = class java.lang.reflect.Method@d8109b8c
+      methodParameterTypesField = class java.lang.reflect.Field@b5603ce3
+      constructorParameterTypesField = class java.lang.reflect.Field@8521493b
+      NoArgs = class java.lang.Object[0]
+      reflectCache = class java.lang.Class$ReflectCache@5525aa70
+      reflectCacheOffset = 84
+  svInstance = class com.ibm.ws.beanvalidation.OSGiBeanValidationImpl@641e7e58
+  moduleValidationXMLs = class java.util.HashMap@53c4b0fa
+    serialVersionUID = 362498820763181265
+    DEFAULT_INITIAL_CAPACITY = 16
+    MAXIMUM_CAPACITY = 1073741824
+    DEFAULT_LOAD_FACTOR = 0.75
+    TREEIFY_THRESHOLD = 8
+    UNTREEIFY_THRESHOLD = 6
+    MIN_TREEIFY_CAPACITY = 64
+    table = null
+    entrySet = null
+    size = 0
+    modCount = 0
+    threshold = 0
+    loadFactor = 0.75
+    keySet = null
+    values = null
+

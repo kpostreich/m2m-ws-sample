@@ -1,0 +1,293 @@
+------Start of DE processing------ = [7/7/23 20:36:11:586 CEST]
+Exception = org.osgi.framework.BundleException
+Source = com.ibm.ws.dynamic.bundle.BundleFactory
+probeid = 179
+Stack Dump = org.osgi.framework.BundleException: An error occurred trying to read the bundle
+	at org.eclipse.osgi.storage.Storage.stageContent0(Storage.java:872)
+	at org.eclipse.osgi.storage.Storage.stageContent(Storage.java:827)
+	at org.eclipse.osgi.storage.Storage.install(Storage.java:528)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.installBundle(BundleContextImpl.java:146)
+	at org.eclipse.equinox.internal.region.BundleIdBasedRegion.installBundle0(BundleIdBasedRegion.java:117)
+	at org.eclipse.equinox.internal.region.BundleIdBasedRegion.installBundleAtLocation(BundleIdBasedRegion.java:97)
+	at com.ibm.ws.dynamic.bundle.BundleFactory.createBundle(BundleFactory.java:174)
+	at com.ibm.ws.classloading.internal.GatewayBundleFactory.createGatewayBundle(GatewayBundleFactory.java:162)
+	at com.ibm.ws.classloading.internal.GatewayBundleFactory.createGatewayBundleClassLoader(GatewayBundleFactory.java:87)
+	at com.ibm.ws.classloading.internal.ClassLoadingServiceImpl.createTCCL(ClassLoadingServiceImpl.java:577)
+	at com.ibm.ws.classloading.internal.ClassLoadingServiceImpl.access$200(ClassLoadingServiceImpl.java:97)
+	at com.ibm.ws.classloading.internal.ClassLoadingServiceImpl$4.createInstance(ClassLoadingServiceImpl.java:537)
+	at com.ibm.ws.classloading.internal.ClassLoadingServiceImpl$4.createInstance(ClassLoadingServiceImpl.java:534)
+	at com.ibm.ws.classloading.internal.util.CanonicalStore.retrieveOrCreate(CanonicalStore.java:84)
+	at com.ibm.ws.classloading.internal.util.CanonicalStore.retrieveOrCreate(CanonicalStore.java:74)
+	at com.ibm.ws.classloading.internal.ClassLoadingServiceImpl.createThreadContextClassLoader(ClassLoadingServiceImpl.java:534)
+	at com.ibm.ws.classloading.internal.ClassLoadingServiceImpl.createThreadContextClassLoader(ClassLoadingServiceImpl.java:93)
+	at com.ibm.ws.beanvalidation.OSGiBeanValidationImpl.createTCCL(OSGiBeanValidationImpl.java:279)
+	at com.ibm.ws.beanvalidation.OSGiBeanValidationImpl.cleanBvalCache(OSGiBeanValidationImpl.java:546)
+	at com.ibm.ws.beanvalidation.OSGiBeanValidationImpl.moduleMetaDataDestroyedApacheProvider(OSGiBeanValidationImpl.java:415)
+	at com.ibm.ws.beanvalidation.OSGiBeanValidationImpl.moduleMetaDataDestroyed(OSGiBeanValidationImpl.java:424)
+	at com.ibm.ws.container.service.metadata.internal.ModuleMetaDataManager.fireMetaDataDestroyed(ModuleMetaDataManager.java:35)
+	at com.ibm.ws.container.service.metadata.internal.ModuleMetaDataManager.fireMetaDataDestroyed(ModuleMetaDataManager.java:18)
+	at com.ibm.ws.container.service.metadata.internal.MetaDataManager.fireMetaDataDestroyedImpl(MetaDataManager.java:148)
+	at com.ibm.ws.container.service.metadata.internal.MetaDataManager.fireMetaDataDestroyed(MetaDataManager.java:128)
+	at com.ibm.ws.container.service.metadata.internal.MetaDataServiceImpl.fireModuleMetaDataDestroyed(MetaDataServiceImpl.java:137)
+	at com.ibm.ws.app.manager.module.internal.ModuleHandlerBase.undeployModule(ModuleHandlerBase.java:152)
+	at com.ibm.ws.app.manager.module.internal.DeployedModuleInfoImpl.uninstallModule(DeployedModuleInfoImpl.java:64)
+	at com.ibm.ws.app.manager.module.internal.SimpleDeployedAppInfoBase.uninstallApp(SimpleDeployedAppInfoBase.java:497)
+	at com.ibm.ws.app.manager.ear.internal.EARApplicationHandlerImpl.uninstall(EARApplicationHandlerImpl.java:97)
+	at com.ibm.ws.app.manager.internal.statemachine.StopAction.execute(StopAction.java:83)
+	at com.ibm.ws.app.manager.internal.statemachine.ApplicationStateMachineImpl.enterState(ApplicationStateMachineImpl.java:1283)
+	at com.ibm.ws.app.manager.internal.statemachine.ApplicationStateMachineImpl.performAction(ApplicationStateMachineImpl.java:1126)
+	at com.ibm.ws.app.manager.internal.statemachine.ApplicationStateMachineImpl.run(ApplicationStateMachineImpl.java:881)
+	at com.ibm.ws.threading.internal.ExecutorServiceImpl$RunnableWrapper.run(ExecutorServiceImpl.java:232)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1160)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:825)
+Caused by: java.io.IOException: No such file or directory
+	at java.io.File.createTempFile(File.java:2074)
+	at org.eclipse.osgi.storage.Storage.stageContent0(Storage.java:851)
+	... 37 more
+
+Dump of callerThis
+Object type = com.ibm.ws.dynamic.bundle.BundleFactory
+  tc = class com.ibm.websphere.ras.TraceComponent@e50b8f5f
+    strings[0] = "TraceComponent[com.ibm.ws.dynamic.bundle.BundleFactory,class com.ibm.ws.dynamic.bundle.BundleFactory,[DynamicBundle],,null]"
+  EXTRAS_SHA_HEADER = "IBM-Extras-SHA"
+  SHA_ALGORITHM = "SHA-256"
+  bundleContext = class org.eclipse.osgi.internal.framework.BundleContextImpl@cc22801f
+    findHookName = "org.osgi.framework.hooks.bundle.FindHook"
+    valid = true
+    bundle = class org.eclipse.osgi.internal.framework.EquinoxBundle@6b3278ab
+      equinoxContainer = class org.eclipse.osgi.internal.framework.EquinoxContainer@b7b46fe8
+      module = class org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule@692c32af
+      monitor = class java.lang.Object@e134c9cb
+      context = class org.eclipse.osgi.internal.framework.BundleContextImpl@cc22801f
+      signerInfos = null
+      $SWITCH_TABLE$org$eclipse$osgi$container$Module$State = {1,2,3,4,5,6,7} /* array length = 7 */
+    container = class org.eclipse.osgi.internal.framework.EquinoxContainer@b7b46fe8
+      NAME = "org.eclipse.osgi"
+      secureAction = class org.eclipse.osgi.framework.util.SecureAction@a0973997
+      equinoxConfig = class org.eclipse.osgi.internal.framework.EquinoxConfiguration@bab39d73
+      logServices = class org.eclipse.osgi.internal.log.EquinoxLogServices@a046ead8
+      storage = class org.eclipse.osgi.storage.Storage@86850375
+      packageAdmin = class org.eclipse.osgi.internal.framework.legacy.PackageAdminImpl@b5cb07b3
+      startLevel = class org.eclipse.osgi.internal.framework.legacy.StartLevelImpl@e9c6ec5b
+      bootDelegation = class java.util.HashSet@6f967c73
+      bootDelegationStems = class java.lang.String[12]
+      bootDelegateAll = false
+      isProcessClassRecursionSupportedByAll = false
+      eventPublisher = class org.eclipse.osgi.internal.framework.EquinoxEventPublisher@690997b
+      monitor = class java.lang.Object@b644ed4f
+      serviceRegistry = class org.eclipse.osgi.internal.serviceregistry.ServiceRegistry@5aa88f7b
+      contextFinder = class org.eclipse.osgi.internal.framework.ContextFinder@4ba31929
+      signedContentFactory = class org.osgi.util.tracker.ServiceTracker@2c08aac1
+      executor = class java.util.concurrent.ScheduledThreadPoolExecutor@f39e0ee4
+      storageSaver = class org.eclipse.osgi.internal.framework.StorageSaver@774c10e1
+    debug = class org.eclipse.osgi.internal.debug.Debug@4c86f308
+      ECLIPSE_OSGI = "org.eclipse.osgi"
+      OPTION_DEBUG_GENERAL = "org.eclipse.osgi/debug"
+      OPTION_DEBUG_BUNDLE_TIME = "org.eclipse.osgi/debug/bundleTime"
+      OPTION_DEBUG_LOADER = "org.eclipse.osgi/debug/loader"
+      OPTION_DEBUG_STORAGE = "org.eclipse.osgi/debug/storage"
+      OPTION_DEBUG_EVENTS = "org.eclipse.osgi/debug/events"
+      OPTION_DEBUG_SERVICES = "org.eclipse.osgi/debug/services"
+      OPTION_DEBUG_HOOKS = "org.eclipse.osgi/debug/hooks"
+      OPTION_DEBUG_MANIFEST = "org.eclipse.osgi/debug/manifest"
+      OPTION_DEBUG_FILTER = "org.eclipse.osgi/debug/filter"
+      OPTION_DEBUG_SECURITY = "org.eclipse.osgi/debug/security"
+      OPTION_DEBUG_STARTLEVEL = "org.eclipse.osgi/debug/startlevel"
+      OPTION_DEBUG_PACKAGEADMIN = "org.eclipse.osgi/debug/packageadmin"
+      OPTION_DEBUG_PACKAGEADMIN_TIMING = "org.eclipse.osgi/debug/packageadmin/timing"
+      OPTION_MONITOR_ACTIVATION = "org.eclipse.osgi/monitor/activation"
+      OPTION_MONITOR_LAZY = "org.eclipse.osgi/monitor/lazy"
+      OPTION_DEBUG_MESSAGE_BUNDLES = "org.eclipse.osgi/debug/messageBundles"
+      OPTION_DEBUG_LOCATION = "org.eclipse.osgi/debug/location"
+      OPTION_CACHED_MANIFEST = "org.eclipse.osgi/debug/cachedmanifest"
+      OPTION_DEBUG_SYSTEM_BUNDLE = "org.eclipse.osgi/debug/systemBundle"
+      DEBUG_GENERAL = false
+      DEBUG_BUNDLE_TIME = false
+      DEBUG_LOADER = false
+      DEBUG_STORAGE = false
+      DEBUG_EVENTS = false
+      DEBUG_SERVICES = false
+      DEBUG_HOOKS = false
+      DEBUG_MANIFEST = false
+      DEBUG_FILTER = false
+      DEBUG_SECURITY = false
+      DEBUG_STARTLEVEL = false
+      DEBUG_PACKAGEADMIN = false
+      DEBUG_PACKAGEADMIN_TIMING = false
+      DEBUG_MESSAGE_BUNDLES = false
+      MONITOR_ACTIVATION = false
+      DEBUG_LOCATION = false
+      DEBUG_CACHED_MANIFEST = false
+      DEBUG_SYSTEM_BUNDLE = false
+      out = class com.ibm.ws.logging.internal.impl.BaseTraceService$TeePrintStream@f15cd36a
+    servicesInUse = class java.util.HashMap@8a167ae6
+      serialVersionUID = 362498820763181265
+      DEFAULT_INITIAL_CAPACITY = 16
+      MAXIMUM_CAPACITY = 1073741824
+      DEFAULT_LOAD_FACTOR = 0.75
+      TREEIFY_THRESHOLD = 8
+      UNTREEIFY_THRESHOLD = 6
+      MIN_TREEIFY_CAPACITY = 64
+      table = class java.util.HashMap$Node[32]
+      entrySet = null
+      size = 22
+      modCount = 32
+      threshold = 24
+      loadFactor = 0.75
+      keySet = null
+      values = null
+    activator = null
+    contextLock = class java.lang.Object@b0c3e1ee
+  bundleLocationPrefix = "WSClassLoadingService@"
+  bundleLocation = "Thread Context:227"
+  region = class org.eclipse.equinox.internal.region.BundleIdBasedRegion@ee0a0a48
+    invalidName = class java.util.regex.Pattern@8d84638e
+      UNIX_LINES = 1
+      CASE_INSENSITIVE = 2
+      COMMENTS = 4
+      MULTILINE = 8
+      LITERAL = 16
+      DOTALL = 32
+      UNICODE_CASE = 64
+      CANON_EQ = 128
+      UNICODE_CHARACTER_CLASS = 256
+      serialVersionUID = 5073258162644648461
+      pattern = "[:=\n*?,"\\]"
+      flags = 0
+      compiled = true
+      normalizedPattern = "[:=\n*?,"\\]"
+      root = class java.util.regex.Pattern$Start@a5158d1f
+      matchRoot = class java.util.regex.Pattern$BitClass@6a6119cf
+      buffer = null
+      namedGroups = null
+      groupNodes = null
+      temp = null
+      capturingGroupCount = 1
+      localCount = 0
+      cursor = 12
+      patternLength = 0
+      hasSupplementary = false
+      MAX_REPS = 2147483647
+      GREEDY = 0
+      LAZY = 1
+      POSSESSIVE = 2
+      INDEPENDENT = 3
+      lookbehindEnd = class java.util.regex.Pattern$4@86c2665a
+      accept = class java.util.regex.Pattern$Node@ccef18bf
+      lastAccept = class java.util.regex.Pattern$LastNode@6cec5503
+      $assertionsDisabled = true
+    REGION_LOCATION_DELIMITER = "#"
+    FILE_SCHEME = "file:"
+    regionName = "liberty.thread.context.api"
+    regionDigraph = class org.eclipse.equinox.internal.region.StandardRegionDigraph@fea2139a
+      EMPTY_EDGE_SET = class java.util.Collections$UnmodifiableSet@42bea6e7
+      monitor = class java.lang.Object@425fc19d
+      regions = class java.util.HashMap@4345314
+      bundleIdToRegionMapping = class org.eclipse.equinox.internal.region.StandardBundleIdToRegionMapping@b59c5da4
+      edges = class java.util.HashMap@28096843
+      bundleContext = class org.eclipse.osgi.internal.framework.BundleContextImpl@c6e48636
+      threadLocal = class java.lang.ThreadLocal@4dba3489
+      subgraphTraverser = class org.eclipse.equinox.internal.region.SubgraphTraverser@f56f9bc
+      bundleCollisionHook = class org.eclipse.equinox.internal.region.hook.RegionBundleCollisionHook@95672efb
+      bundleEventHook = class org.eclipse.equinox.internal.region.hook.RegionBundleEventHook@f7bd0975
+      bundleFindHook = class org.eclipse.equinox.internal.region.hook.RegionBundleFindHook@c029fddd
+      serviceEventHook = class org.eclipse.equinox.internal.region.hook.RegionServiceEventHook@4384ae94
+      serviceFindHook = class org.eclipse.equinox.internal.region.hook.RegionServiceFindHook@cbf71559
+      resolverHookFactory = class org.eclipse.equinox.internal.region.hook.RegionResolverHookFactory@89313bd2
+      origin = null
+      originUpdateCount = -1
+      updateCount = class java.util.concurrent.atomic.AtomicLong@e3728510
+      defaultRegion = null
+    bundleIdToRegionMapping = class org.eclipse.equinox.internal.region.StandardRegionDigraph@fea2139a
+    bundleContext = class org.eclipse.osgi.internal.framework.BundleContextImpl@c6e48636
+      findHookName = "org.osgi.framework.hooks.bundle.FindHook"
+      valid = true
+      bundle = class org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle@858ebfce
+      container = class org.eclipse.osgi.internal.framework.EquinoxContainer@b7b46fe8
+      debug = class org.eclipse.osgi.internal.debug.Debug@4c86f308
+      servicesInUse = class java.util.HashMap@b30b5aa1
+      activator = class org.eclipse.osgi.internal.framework.SystemBundleActivator@c0e9d3d2
+      contextLock = class java.lang.Object@17461fdc
+    threadLocal = class java.lang.ThreadLocal@4dba3489
+      threadLocalHashCode = -1070407172
+      nextHashCode = class java.util.concurrent.atomic.AtomicInteger@61caf951
+      HASH_INCREMENT = 1640531527
+  defaultInstance = null
+  metatypeXML = null
+  components = class java.util.ArrayList@f923ff8f
+    serialVersionUID = 8683452581122892189
+    DEFAULT_CAPACITY = 10
+    EMPTY_ELEMENTDATA = class java.lang.Object[0]
+    DEFAULTCAPACITY_EMPTY_ELEMENTDATA = class java.lang.Object[0]
+    elementData = class java.lang.Object[0]
+    size = 0
+    MAX_ARRAY_SIZE = 2147483639
+    modCount = 0
+    MAX_ARRAY_SIZE = 2147483639
+  serialVersionUID = -7509196236451085981
+  MANIFEST_ATTRIBUTE_SEPARATOR = ","
+  manifestVersion = "1.0"
+  bundleName = "Gateway bundle for ThreadContextClassLoader"
+  bundleVersion = "0.0.0"
+  bundleVendor = "IBM"
+  bundleDescription = "A dynamic bundle"
+  bundleManifestVersion = "2"
+  bundleSymbolicName = "gateway.bundle.Thread_Context.227"
+  importPackageList = null
+  requireBundleList = null
+  dynamicImportPackageList = class java.util.Arrays$ArrayList@ee978a58
+    serialVersionUID = -2764017481108945198
+    a = class java.lang.String[1]
+      String[0] = "*;thread-context="true""
+    modCount = 0
+    MAX_ARRAY_SIZE = 2147483639
+  serviceComponentList = class java.util.ArrayList@a8f3b7fa
+    serialVersionUID = 8683452581122892189
+    DEFAULT_CAPACITY = 10
+    EMPTY_ELEMENTDATA = class java.lang.Object[0]
+    DEFAULTCAPACITY_EMPTY_ELEMENTDATA = class java.lang.Object[0]
+    elementData = class java.lang.Object[0]
+    size = 0
+    MAX_ARRAY_SIZE = 2147483639
+    modCount = 0
+    MAX_ARRAY_SIZE = 2147483639
+  lazyActivation = true
+  otherAttributes = class java.util.HashMap@1a34e7c9
+    serialVersionUID = 362498820763181265
+    DEFAULT_INITIAL_CAPACITY = 16
+    MAXIMUM_CAPACITY = 1073741824
+    DEFAULT_LOAD_FACTOR = 0.75
+    TREEIFY_THRESHOLD = 8
+    UNTREEIFY_THRESHOLD = 6
+    MIN_TREEIFY_CAPACITY = 64
+    table = class java.util.HashMap$Node[16]
+      Node[0] = null
+      Node[1] = null
+      Node[2] = class java.util.HashMap$Node@a052ea22
+      Node[3] = null
+      Node[4] = null
+      Node[5] = null
+      Node[6] = class java.util.HashMap$Node@bb9d6e0e
+      Node[7] = null
+      Node[8] = null
+      Node[9] = null
+      Node[10] = null
+      Node[11] = null
+      Node[12] = null
+      Node[13] = null
+      Node[14] = null
+      Node[15] = null
+    entrySet = class java.util.HashMap$EntrySet@47c73c7b
+      this$0 = class java.util.HashMap@1a34e7c9
+      MAX_ARRAY_SIZE = 2147483639
+    size = 2
+    modCount = 2
+    threshold = 12
+    loadFactor = 0.75
+    keySet = null
+    values = null
+  serialVersionUID = -8635814953760313658
+  $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@6847b524
+    strings[0] = "TraceComponent[com.ibm.ws.dynamic.bundle.ManifestFactory,class com.ibm.ws.dynamic.bundle.ManifestFactory,[DynamicBundle],,null]"
+
