@@ -65,6 +65,8 @@
                     </assemblyArtifact>
                     <serverName>DefaultApplicationServer</serverName>
                     <configFile>src/main/liberty/config/server.xml</configFile>
+                    <serverEnv>src/main/liberty/config/server.env</serverEnv>
+                    <mergeServerEnv>true</mergeServerEnv>
                     <appsDirectory>apps</appsDirectory>
                     <looseApplication>false</looseApplication>
                 </configuration>
