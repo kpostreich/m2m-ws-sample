@@ -231,7 +231,7 @@
             {
                 "name": "Increment",
                 "group": 1,
-                "category": "partition0",
+                "category": "Utility",
                 "construct": "Entity",
                 "FQCN": "com.ibm.defaultapplication.Increment",
                 "filepath": "Class, project/src/main/java/com/ibm/defaultapplication/Increment.java",
@@ -240,7 +240,8 @@
                 ],
                 "tags": [
                     "Utility"
-                ]
+                ],
+                "originalCategory": "partition0"
             },
             {
                 "name": "SnoopServlet",
@@ -320,6 +321,18 @@
                     ]
                 },
                 {
+                    "name": "Utility",
+                    "group": 1,
+                    "category": "Utility",
+                    "filepath": "Cluster",
+                    "semantics": [
+                        "hitcount"
+                    ],
+                    "tags": [
+                        "Utility"
+                    ]
+                },
+                {
                     "name": "partition1",
                     "group": 0,
                     "category": "partition1",
@@ -329,7 +342,13 @@
                     ]
                 }
             ],
-            "links": []
+            "links": [
+                {
+                    "source": "partition0",
+                    "target": "Utility",
+                    "value": 1.746
+                }
+            ]
         }
     },
     "micro_detail_partition_by_natural_seam": {
@@ -370,7 +389,7 @@
             {
                 "name": "Increment",
                 "group": 1,
-                "category": "partition0",
+                "category": "Utility",
                 "construct": "Entity",
                 "FQCN": "com.ibm.defaultapplication.Increment",
                 "filepath": "Class, project/src/main/java/com/ibm/defaultapplication/Increment.java",
@@ -379,7 +398,8 @@
                 ],
                 "tags": [
                     "Utility"
-                ]
+                ],
+                "originalCategory": "partition0"
             },
             {
                 "name": "SnoopServlet",
@@ -459,6 +479,18 @@
                     ]
                 },
                 {
+                    "name": "Utility",
+                    "group": 1,
+                    "category": "Utility",
+                    "filepath": "Cluster",
+                    "semantics": [
+                        "hitcount"
+                    ],
+                    "tags": [
+                        "Utility"
+                    ]
+                },
+                {
                     "name": "partition1",
                     "group": 0,
                     "category": "partition1",
@@ -468,7 +500,13 @@
                     ]
                 }
             ],
-            "links": []
+            "links": [
+                {
+                    "source": "partition0",
+                    "target": "Utility",
+                    "value": 1.746
+                }
+            ]
         }
     }
 }

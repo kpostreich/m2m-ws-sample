@@ -37,8 +37,8 @@
             },
             {
                 "name": "Increment",
-                "group": 0,
-                "category": "partition0",
+                "group": 1,
+                "category": "Utility",
                 "construct": "Class",
                 "FQCN": "",
                 "filepath": "Class, project/src/main/java/com/ibm/defaultapplication/Increment.java",
@@ -51,7 +51,7 @@
             },
             {
                 "name": "SnoopServlet",
-                "group": 1,
+                "group": 2,
                 "category": "partition1",
                 "construct": "Class",
                 "FQCN": "",
@@ -127,8 +127,17 @@
                     ]
                 },
                 {
-                    "name": "partition1",
+                    "name": "Utility",
                     "group": 1,
+                    "category": "Utility",
+                    "filepath": "Cluster",
+                    "semantics": [
+                        "hitcount"
+                    ]
+                },
+                {
+                    "name": "partition1",
+                    "group": 2,
                     "category": "partition1",
                     "filepath": "Cluster",
                     "semantics": [
@@ -136,7 +145,13 @@
                     ]
                 }
             ],
-            "links": []
+            "links": [
+                {
+                    "source": "partition0",
+                    "target": "Utility",
+                    "value": 1.746
+                }
+            ]
         }
     }
 }
