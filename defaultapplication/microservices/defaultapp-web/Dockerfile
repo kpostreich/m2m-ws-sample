@@ -1,7 +1,8 @@
 ########################################
 # Build Image
 ########################################
-FROM maven:3.6-jdk-8-slim as build
+#FROM maven:3.6-jdk-8-slim as build
+FROM quay.io/kpostreichq/maven:3.6-jdk-8-slim as build
 
 WORKDIR /app
 COPY . .
@@ -18,7 +19,8 @@ RUN mvn install
 # Production Image
 ########################################
 #FROM open-liberty:microProfile2-java8-ibm
-FROM openliberty/open-liberty:full-java8-ibmjava-ubi
+#FROM openliberty/open-liberty:full-java8-ibmjava-ubi
+FROM quay.io/kpostreichq/open-liberty:full-java8-ibmjava-ubi
 
 # Add build files
 COPY --from=build --chown=1001:0 /app/DefaultApplication-ear/target/DefaultApplication.ear /config/apps/DefaultApplication.ear
