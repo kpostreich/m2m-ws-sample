@@ -1,0 +1,294 @@
+###Lab 2655 - Lab command snippets
+
+------------
+PART 1: 
+------------
+
+cd /home/ibmdemo
+
+git clone https://github.com/kpostreich/m2m-ws-sample.git
+
+cd /home/ibmdemo/m2m-ws-sample
+
+ls -l
+
+-----------
+PART 2: 
+-----------
+
+----------------
+    Section 2.1
+----------------
+
+cd /home/ibmdemo
+ 
+curl https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/mono2micro/Mono2Micro-CLI.zip --output Mono2Micro-CLI.zip
+ 
+
+unzip Mono2Micro-CLI.zip -d /home/ibmdemo/Mono2Micro-CLI
+                 
+cd /home/ibmdemo/Mono2Micro-CLI
+
+./mono2micro -v
+
+./mono2micro -h
+
+./mono2micro install -h
+
+./mono2micro install -c docker
+
+cat ~/.mono2micro_license
+
+cat ~/.mono2micro_config
+
+
+----------------
+    Section 2.2
+----------------
+
+cd /home/ibmdemo/m2m-ws-sample/defaultapplication/monolith
+
+mvn -DskipTests=true clean install
+
+cd /home/ibmdemo/Mono2Micro-CLI
+
+./mono2micro analyze -h
+
+./mono2micro analyze -a /home/ibmdemo/m2m-ws-sample/defaultapplication/monolith/DefaultApplication-ear/target/DefaultApplication.ear --analyze-all -i out
+
+ls -g DefaultApplication-mono2micro
+
+
+-------------------
+    Section 2.3.1
+-------------------
+
+
+gedit /home/ibmdemo/m2m-ws-sample/defaultapplication/monolith/DefaultApplication-ear/target/liberty/wlp/usr/servers/DefaultApplicationServer/jvm.options
+
+
+-javaagent:/home/ibmdemo/Mono2Micro-CLI/instrumenter/minerva-agent-1.0.jar=/home/ibmdemo/Mono2Micro-CLI/DefaultApplication-mono2micro/instrumenter-config.json 
+
+/home/ibmdemo/m2m-ws-sample/defaultapplication/scripts/startServer.sh
+
+/home/ibmdemo/m2m-ws-sample/defaultapplication/scripts/serverStatus.sh
+
+http://localhost:9080
+
+head -25 /home/ibmdemo/m2m-ws-sample/defaultapplication/monolith/DefaultApplication-ear/target/liberty/wlp/usr/servers/DefaultApplicationServer/logs/console.log | grep minerva
+
+
+-------------------
+    Section 2.3.2
+-------------------
+
+cd /home/ibmdemo/Mono2Micro-CLI
+
+./mono2micro usecase -h
+
+./mono2micro usecase
+
+/home/ibmdemo/m2m-ws-sample/defaultapplication/scripts/stopServer.sh
+
+
+-------------------
+    Section 2.4.1
+-------------------
+
+cd /home/ibmdemo/Mono2Micro-CLI
+
+ls *.json
+
+cat context*.json
+
+cat /home/ibmdemo/m2m-ws-sample/defaultapplication/monolith/DefaultApplication-ear/target/liberty/wlp/usr/servers/DefaultApplicationServer/logs/messages.log | grep '\<Entering\>\|Exiting'
+
+
+-------------------
+    Section 2.6.1
+-------------------
+
+ls -R /home/ibmdemo/m2m-ws-sample/defaultapplication/application-data
+
+
+-------------------
+    Section 2.6.2
+-------------------
+
+cd /home/ibmdemo/Mono2Micro-CLI
+
+./mono2micro recommend -h
+
+./mono2micro recommend -d /home/ibmdemo/m2m-ws-sample/defaultapplication/application-data
+
+
+-------------------
+    Section 2.6.3
+-------------------
+
+./mono2micro workbench -h
+
+./mono2micro workbench
+
+http://localhost:3000
+
+
+-------------------
+    Section 2.7.2
+-------------------
+
+cp /home/ibmdemo/Downloads/final_graph.json /home/ibmdemo/m2m-ws-sample/defaultapplication/application-data/custom_graph.json
+ 
+cd /home/ibmdemo/m2m-ws-sample/defaultapplication/application-data
+         
+ls -l
+
+sudo chmod 777 ./config.ini
+
+gedit ./config.ini
+
+custom_graph.json
+
+cd /home/ibmdemo/Mono2Micro-CLI
+
+./mono2micro refine -d /home/ibmdemo/m2m-ws-sample/defaultapplication/application-data
+
+
+
+-------------------
+    Section 2.7.3
+-------------------
+
+ls -l /home/ibmdemo/m2m-ws-sample/defaultapplication/application-data/mono2micro/mono2micro-user-modified
+
+cd /home/ibmdemo/m2m-ws-sample/defaultapplication/application-data/mono2micro/mono2micro-user-modified
+ 
+google-chrome ./Cardinal-Report-Modified.html
+
+
+
+----------
+PART 3
+----------
+
+-------------------
+    Section 3.1
+-------------------
+
+cd /home/ibmdemo/Mono2Micro-CLI
+
+./mono2micro transform -h
+
+./mono2micro transform -p /home/ibmdemo/m2m-ws-sample/defaultapplication/mono2micro-analysis-custom/cardinal -s /home/ibmdemo/m2m-ws-sample/defaultapplication/monolith
+
+-------------------
+    Section 3.2
+-------------------
+
+cd /home/ibmdemo/m2m-ws-sample/defaultapplication/mono2micro-analysis-custom/cardinal/cardinal-codegen
+   
+gedit CardinalFileSummary.txt
+
+
+-------------------
+    Section 3.4.1
+-------------------
+
+cd /home/ibmdemo/m2m-ws-sample/defaultapplication/scripts
+
+gedit moveResourcesToPartitions.sh
+
+./moveResourcesToPartitions.sh
+
+
+-------------------
+    Section 3.4.2
+-------------------
+
+cd /home/ibmdemo/m2m-ws-sample/defaultapplication/scripts
+
+./refactorPartitions.sh
+
+
+-------------------
+    Section 3.4.3
+-------------------
+
+gedit /home/ibmdemo/m2m-ws-sample/defaultapplication/monolith-web/Dockerfile
+
+gedit /home/ibmdemo/m2m-ws-sample/defaultapplication/monolith-partition0/Dockerfile
+
+
+-------------------
+    Section 3.5
+-------------------
+
+cd /home/ibmdemo/m2m-ws-sample/defaultapplication/monolith-web/
+
+mvn clean install
+
+cd /home/ibmdemo/m2m-ws-sample/defaultapplication/monolith-partition0
+
+mvn clean install
+
+
+
+------------------
+PART 4 (OPTIONAL)
+------------------
+
+docker network create defaultappNetwork
+ 
+docker network list
+
+cd /home/ibmdemo/m2m-ws-sample/defaultapplication/microservices/defaultapp-web
+
+docker build -t defaultapp-web . | tee web.out
+
+docker run --name=defaultapp-web --hostname=defaultapp-web --network=defaultappNetwork -d -p 9095:9080 defaultapp-web:latest
+
+docker ps | grep defaultapp
+
+
+cd /home/ibmdemo/m2m-ws-sample/defaultapplication/microservices/defaultapp-partition0
+
+docker build -t defaultapp-partition0 . | tee partition0.out
+
+docker run --name=defaultapp-partition0 --hostname=defaultapp-partition0 --network=defaultappNetwork -d -p 9096:9080 defaultapp-partition0:latest
+
+docker ps | grep defaultapp-partition0
+
+docker inspect defaultappNetwork
+
+
+--------------------------
+    Section 4.1 (OPTIONAL)
+--------------------------
+
+docker logs defaultapp-web
+
+docker logs defaultapp-partition0
+
+--------------------------
+    Section 4.2 (OPTIONAL)
+--------------------------
+
+http://localhost:9095
+
+docker logs defaultapp-web
+
+docker logs defaultapp-partition0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
