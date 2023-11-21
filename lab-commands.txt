@@ -75,7 +75,7 @@ gedit /home/ibmdemo/m2m-ws-sample/defaultapplication/monolith/DefaultApplication
 
 http://localhost:9080
 
-head -25 /home/ibmdemo/m2m-ws-sample/defaultapplication/monolith/DefaultApplication-ear/target/liberty/wlp/usr/servers/DefaultApplicationServer/logs/console.log | grep minerva
+head -25 /home/ibmdemo/m2m-ws-sample/defaultapplication/monolith/DefaultApplication-ear/target/liberty/wlp/usr/servers/DefaultApplicationServer/logs/console.log | grep Minerva
 
 
 -------------------
